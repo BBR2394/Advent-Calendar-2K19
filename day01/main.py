@@ -1,18 +1,13 @@
 # -*- coding: utf-8 -*-
 # @Author: Baptiste
 # @Date:   2019-12-01 22:18:06
-# @Last Modified by:   Baptiste
-# @Last Modified time: 2019-12-01 22:27:11
+# @Last Modified by:   Baptiste Bertrand-Rapello
+# @Last Modified time: 2019-12-01 22:43:35
 
 #!/usr/local/bin/python3
 
-class Module:
-	def __init__(self, ms):
-		self.fuel = 0
-		self.masse = ms
-
-	def computeFurl(self):
-		self.fuel = 0
+import math
+from Module import * 
 
 def main():
 	print("In The Main function")
@@ -24,15 +19,27 @@ def main():
 	modTwelve.computeFuel()
 	modFourteen.computeFuel()
 	modNineteenSixteenNie.computeFuel()
-	modHundredThousandSevenFiveSix.computeFurl()
+	modHundredThousandSevenFiveSix.computeFuel()
 
-	if modTwelve.getFuel != 2:
-		print("ERROR : for 12 as mass we only need 2 of fuel unit !")
-	if modFourteen.getFuel != 2:
-		print("ERROR : for 14 as mass we only need 2 of fuel unit !")
-	if modNineteenSixteenNie.getFuel != 654:
-		print("ERROR : for 1969 as mass we only need 654 of fuel unit !")
-	if modHundredThousandSevenFiveSix.getFuel != 33583:
-		print("ERROR : for 100756 as mass we only need 33583 of fuel unit !")
+	if modTwelve.getFuel() != 2:
+		print("\033[93mERROR\033[0m : for 12 as mass we only need 2 of fuel unit !")
+	else:
+		print("\033[92mOK!\033[0m : for 12 it is 2, the test passed ;-p")
+
+	if modFourteen.getFuel() != 2:
+		print("\033[93mERROR\033[0m : for 14 as mass we only need 2 of fuel unit !")
+	else:
+		print("\033[92mOK!\033[0m : for 14 it is 2, the test passed ;-p")
+
+	if modNineteenSixteenNie.getFuel() != 654:
+		print("\033[93mERROR\033[0m : for 1969 as mass we only need 654 of fuel unit !")
+	else:
+		print("\033[92mOK!\033[0m : for 1969 it is 654, the test passed ;-p")
+
+	if modHundredThousandSevenFiveSix.getFuel() != 33583:
+		print("\033[93mERROR\033[0m : for 100756 as mass we only need 33583 of fuel unit !")
+	else:
+		print("\033[92mOK!\033[0m : for 100756 it is 33583, the test passed ;-p")
+
 
 main()
