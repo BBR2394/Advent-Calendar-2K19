@@ -2,7 +2,7 @@
 # @Author: Baptiste
 # @Date:   2019-12-01 22:18:06
 # @Last Modified by:   Baptiste Bertrand-Rapello
-# @Last Modified time: 2019-12-06 00:31:35
+# @Last Modified time: 2019-12-09 15:29:27
 
 #!/usr/local/bin/python3
 
@@ -10,6 +10,7 @@ import math
 from Module import * 
 from Intcode import *
 from PasswordBreaker import *
+from WireMod import *
 import time
 
 def open_a_file(file_name):
@@ -23,7 +24,7 @@ def open_a_file(file_name):
 
 def store_file_in_list(fd):
 	lst = []
-	line = fd.readline()
+	line = fd.readline(';')
 	entrynb = 1
 	#print(":" + str(entrynb) + "> line juts to test " + str(line))
 	while line != "":
@@ -173,6 +174,15 @@ def mainDeux():
 	#pb = PassBrkr("123456-444444")
 	pb.breakeIt()
 
+def mainWireMod():
+	print("dans le main wire mod")
+	wm = WireMod()
+	wm.initPan()
+
+def mainCalcOrbit():
+	print("dans main calc mainCalcOrbit")
+
 
 # main()
-mainDeux()
+#mainDeux()
+mainWireMod()
